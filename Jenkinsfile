@@ -5,12 +5,12 @@ pipeline {
         //label 'latest'
         //repository/docker/gaddamnarendra/myprivaterepo https://hub.docker.com/
         registryUrl 'https://index.docker.io/v1/'
-        registryCredentialsId 'DOCKER_CRDS'
+        //registryCredentialsId 'DOCKER_CRDS'
     }
 }
-  /*environment {
+  environment {
     DOCKERHUB_CREDENTIALS = credentials('DOCKER_CRDS')
-  }*/
+  }
   stages {
     stage('Build') {
       steps {
