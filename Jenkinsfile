@@ -14,7 +14,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t gaddamnarendra/maven:latest .'
+        sh 'docker build -t gaddamnarendra/myprivaterepo:1 .'
       }
     }
     stage('Login') {
@@ -24,7 +24,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push gaddamnarendra/maven:latest'
+        sh 'docker push gaddamnarendra/myprivaterepo:1'
       }
     }
   }
