@@ -1,7 +1,7 @@
 pipeline {
     agent {
     docker {
-        //image 'gaddamnarendra/maven'
+        image 'ubuntu:latest'
         //label 'latest'
         //repository/docker/gaddamnarendra/myprivaterepo
         registryUrl 'https://hub.docker.com/'
