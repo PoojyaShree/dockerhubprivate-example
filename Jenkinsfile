@@ -3,8 +3,8 @@ pipeline {
     docker {
         image 'ubuntu:latest'
         //label 'latest'
-        //repository/docker/gaddamnarendra/myprivaterepo
-        registryUrl 'https://hub.docker.com/'
+        //repository/docker/gaddamnarendra/myprivaterepo https://hub.docker.com/
+        registryUrl 'https://index.docker.io/v1/'
         registryCredentialsId 'DOCKER_CRDS'
     }
 }
