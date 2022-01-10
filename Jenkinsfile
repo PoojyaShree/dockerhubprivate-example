@@ -3,7 +3,8 @@ pipeline {
     docker {
         //image 'gaddamnarendra/maven'
         //label 'latest'
-        registryUrl 'https://hub.docker.com/repository/docker/gaddamnarendra/myprivaterepo'
+        //repository/docker/gaddamnarendra/myprivaterepo
+        registryUrl 'https://hub.docker.com/'
         registryCredentialsId 'DOCKER_CRDS'
     }
 }
