@@ -8,9 +8,9 @@ pipeline {
         registryCredentialsId 'DOCKER_CRDS'
     }
 }
-  environment {
+  /*environment {
     DOCKERHUB_CREDENTIALS = credentials('DOCKER_CRDS')
-  }
+  }*/
   stages {
     stage('Build') {
       steps {
