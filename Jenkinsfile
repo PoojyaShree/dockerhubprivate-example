@@ -14,6 +14,7 @@ node{
     stage('push image'){
         docker.withRegistry('https://registry.hub.docker.com','DOCKER_CRDS'){
             app.push("latest")
+            app.push("${env.BUILD_NUMBER}")
         }
     }
 }
