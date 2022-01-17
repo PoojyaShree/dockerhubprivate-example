@@ -1,23 +1,37 @@
-
-    pipeline{
+pipeline{
+    environment{ app=''}
     agent any
     stages{
-     def app
     stage('scm'){
+        steps{
         git branch: 'main', url: 'https://github.com/PoojyaShree/dockerhubprivate-example.git'
     }
+    }
     stage('build the image'){
-        app=docker.build("gaddamnarendra/myprivaterepo",".")
+        steps{
+            script{
+         //app=docker.build("gaddamnarendra/myprivaterepo",".")
+         app=docker.build("gaddamnarendra/myprivaterepo",".")
+                  }
+        }
     }
     stage('test image'){
-        app.inside{
+        steps{
+            script{
+            app.inside{
             sh 'echo "tested successfully"'
+        }
+            }
         }
     }
     stage('push image'){
+        steps{
+            script{
         docker.withRegistry('https://registry.hub.docker.com','DOCKER_CRDS'){
             app.push("latest")
             app.push("${env.BUILD_NUMBER}")
+         }
+        }
         }
      }
    }
